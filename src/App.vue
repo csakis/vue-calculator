@@ -1,19 +1,19 @@
 <template>
-  <el-container>
-    <el-header> </el-header>
-    <el-main>
-      <Calculator />
-    </el-main>
-  </el-container>
+  <container>
+    <Header></Header>
+    <Calculator />
+  </container>
 </template>
 
 <script>
 import Calculator from "@/components/Calculator";
+import Header from "@/components/Header";
 
 export default {
   name: "app",
   components: {
-    Calculator
+    Calculator,
+    Header
   }
 };
 </script>
