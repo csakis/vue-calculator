@@ -1,21 +1,28 @@
 <template>
-  <container>
-    <Header></Header>
-    <Calculator />
-  </container>
+  <v-app>
+    <v-app-bar app color="primary" dark>
+      <Header></Header>
+    </v-app-bar>
+    <v-content>
+      <Calculator />
+    </v-content>
+  </v-app>
 </template>
 
 <script>
-import Calculator from "@/components/Calculator";
 import Header from "@/components/Header";
+import Calculator from "@/components/Calculator";
 
 export default {
-  name: "app",
+  name: "App",
+
   components: {
-    Calculator,
-    Header
-  }
+    Header,
+    Calculator
+  },
+
+  data: () => ({
+    //
+  })
 };
 </script>
-
-<style></style>
