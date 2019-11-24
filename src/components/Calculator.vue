@@ -14,7 +14,8 @@
             :key="el.content"
             :width="el.width"
             :content="el.content"
-          ></CalcButton>
+            >{{ el.content }}</CalcButton
+          >
         </v-row>
       </v-card>
     </v-col>

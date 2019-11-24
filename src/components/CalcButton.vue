@@ -1,6 +1,6 @@
 <template>
-  <v-col :cols="width">
-    <v-btn :color="color" block>{{ content }}</v-btn>
+  <v-col @click="clickHandle(content)" :cols="width">
+    <v-btn :color="color" block><slot></slot></v-btn>
   </v-col>
 </template>
 
@@ -18,6 +18,11 @@ export default {
     content: {
       type: String,
       default: ""
+    }
+  },
+  methods: {
+    clickHandle(x) {
+      this.$store.dispatch("clickAction", { value: x });
     }
   }
 };

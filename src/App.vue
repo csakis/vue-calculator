@@ -5,6 +5,7 @@
     </v-app-bar>
     <v-container>
       <v-content>
+        <Display />
         <Calculator :layout="layout" />
       </v-content>
     </v-container>
@@ -13,6 +14,7 @@
 
 <script>
 import Header from "@/components/Header";
+import Display from "@/components/Display";
 import { layout } from "@/assets/layout";
 import Calculator from "@/components/Calculator";
 export default {
@@ -20,7 +22,8 @@ export default {
 
   components: {
     Header,
-    Calculator
+    Calculator,
+    Display
   },
 
   data: () => ({
