@@ -3,9 +3,11 @@
     <v-app-bar app color="primary" dark>
       <Header></Header>
     </v-app-bar>
-    <v-content>
-      <Calculator />
-    </v-content>
+    <v-container fluid>
+      <v-content>
+        <Calculator />
+      </v-content>
+    </v-container>
   </v-app>
 </template>
 
