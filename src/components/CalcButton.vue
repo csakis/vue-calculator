@@ -1,6 +1,6 @@
 <template>
   <v-col :cols="width">
-    <v-btn :color="color" block rounded>{{ content }}</v-btn>
+    <v-btn :color="color" block>{{ content }}</v-btn>
   </v-col>
 </template>
 

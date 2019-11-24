@@ -1,13 +1,15 @@
 <template>
-  <v-row>
-    <CalcButton
-      v-for="el in this.$store.state.layout"
-      :color="el.color"
-      :key="el.content"
-      :width="el.width"
-      :content="el.content"
-    ></CalcButton>
-  </v-row>
+  <span>
+    <v-row dense v-for="row in this.$store.state.layout" :key="row">
+      <CalcButton
+        v-for="el in row"
+        :color="el.color"
+        :key="el.content"
+        :width="el.width"
+        :content="el.content"
+      ></CalcButton>
+    </v-row>
+  </span>
 </template>
 
 <script>
