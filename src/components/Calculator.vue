@@ -1,20 +1,23 @@
 <template>
-  <span>
-    <v-row dense v-for="row in this.$store.state.layout" :key="row">
-      <CalcButton
-        v-for="el in row"
-        :color="el.color"
-        :key="el.content"
-        :width="el.width"
-        :content="el.content"
-      ></CalcButton>
-    </v-row>
-  </span>
+  <v-col cols="6">
+    <v-card raised shaped>
+      <v-row justify="center" dense v-for="row in layout" :key="row[0].content">
+        <CalcButton
+          v-for="el in row"
+          :color="el.color"
+          :key="el.content"
+          :width="el.width"
+          :content="el.content"
+        ></CalcButton>
+      </v-row>
+    </v-card>
+  </v-col>
 </template>
 
 <script>
 import CalcButton from "@/components/CalcButton";
 export default {
+  props: ["layout"],
   components: {
     CalcButton
   }

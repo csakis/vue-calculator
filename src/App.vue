@@ -3,9 +3,9 @@
     <v-app-bar app color="primary" dark>
       <Header></Header>
     </v-app-bar>
-    <v-container fluid>
+    <v-container>
       <v-content>
-        <Calculator />
+        <Calculator :layout="layout" />
       </v-content>
     </v-container>
   </v-app>
@@ -13,8 +13,8 @@
 
 <script>
 import Header from "@/components/Header";
+import { layout } from "@/assets/layout";
 import Calculator from "@/components/Calculator";
-
 export default {
   name: "App",
 
@@ -24,7 +24,7 @@ export default {
   },
 
   data: () => ({
-    //
+    layout
   })
 };
 </script>
