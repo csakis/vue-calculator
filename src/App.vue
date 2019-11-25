@@ -5,8 +5,16 @@
     </v-app-bar>
     <v-container>
       <v-content>
-        <Display />
-        <Calculator :layout="layout" />
+        <v-row justify="center">
+          <v-col cols="6">
+            <v-card elevation="5" class="pa-3 ">
+              <v-card elevation="1" class="pa-2">
+                <Display />
+                <Calculator :layout="layout" />
+              </v-card>
+            </v-card>
+          </v-col>
+        </v-row>
       </v-content>
     </v-container>
   </v-app>

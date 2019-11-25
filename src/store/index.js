@@ -6,11 +6,35 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     result: "0",
-    display: "0"
+    display: "10"
   },
   mutations: {
-    clickAction(state, payload) {
-      return (state.result += payload.value);
+    clickAction(state, { value }) {
+      switch (value) {
+        case "0":
+          state.result === "0" ? state.result : (state.result += "0");
+          break;
+        case "C":
+          state.result = "0";
+          state.display = "0";
+          break;
+        case "CE":
+          state.result = "0";
+          break;
+        case ".":
+          if (state.result.includes(".")) {
+            break; //if we already have a decimal point don't do anytihng
+          }
+          state.result === "0" ? (state.result = "0.") : (state.result += ".");
+          break;
+
+        default:
+          state.result === "0"
+            ? (state.result = value)
+            : (state.result += value);
+          break;
+      }
+      // return state.result;
     }
   },
   actions: {

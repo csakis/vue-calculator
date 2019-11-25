@@ -1,7 +1,7 @@
 <template>
   <v-row justify="center">
-    <v-col cols="6" class="pb-0">
-      <v-card class="text-right">
+    <v-col cols="12" class="pb-0">
+      <v-card flat dark class="text-right">
         <v-card-subtitle class="pa-1">
           {{ this.$store.state.display }}
         </v-card-subtitle>
