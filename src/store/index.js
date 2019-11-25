@@ -3,6 +3,8 @@ import Vuex from "vuex";
 
 Vue.use(Vuex);
 
+// const expression = new RegExp(/$\*|\/|\+|-/);
+// const endsWithNumber = new RegExp(/$\d/);
 export default new Vuex.Store({
   state: {
     result: "0",
@@ -26,6 +28,10 @@ export default new Vuex.Store({
             break; //if we already have a decimal point don't do anytihng
           }
           state.result === "0" ? (state.result = "0.") : (state.result += ".");
+          break;
+        case "=":
+          state.result = "0";
+          state.display = "0";
           break;
 
         default:
