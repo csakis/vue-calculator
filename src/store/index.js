@@ -21,7 +21,14 @@ export default new Vuex.Store({
           state.display = "0";
           break;
         case "CE":
-          state.result = "0";
+          if (state.result !== "0" && state.result.length >= 1) {
+            if (state.result.length === 1) {
+              //  if only one number left
+              state.result = "0";
+              break;
+            }
+            state.result = state.result.substr(0, state.result.length - 1);
+          }
           break;
         case ".":
           if (state.result.includes(".")) {
@@ -30,8 +37,12 @@ export default new Vuex.Store({
           state.result === "0" ? (state.result = "0.") : (state.result += ".");
           break;
         case "=":
+          try {
+            state.display = eval(state.result);
+          } catch {
+            state.display = "ERR";
+          }
           state.result = "0";
-          state.display = "0";
           break;
 
         default:
